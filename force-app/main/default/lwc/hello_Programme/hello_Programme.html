@@ -1,0 +1,11 @@
+<template>
+		
+		<lightning-card>
+		<lightning-input lable="message" name='inputname' type="text" value={input1} onchange={handlechange}></lightning-input>
+				<lightning-button lable="button" onclick={handleclick}></lightning-button>
+				<template if:true={handletrue}>
+				<p>
+						hello {nameofperson}
+						</p></template>
+		</lightning-card>
+</template>

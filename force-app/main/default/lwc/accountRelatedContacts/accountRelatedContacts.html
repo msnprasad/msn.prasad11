@@ -1,0 +1,28 @@
+<template>
+    <lightning-card icon-name="custom:custom14" title="Filterd Accounts">
+        <lightning-layout vertical-align="center" >
+            <lightning-layout-item padding="around-small" >
+                <lightning-input type="text" value={sword} onchange={Handlechange}>
+                    </lightning-input>
+                    <lightning-button onclick={Searchaccounts} variant="brand" label="Search" >
+                    </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout> 
+        <lightning-layout vertical-align="center" >
+            <lightning-layout-item padding="around-small" >
+    <template if:true={Accounts}>
+        <h2>Account Records</h2>
+        <lightning-datatable key-field="Id" data={Accounts} columns={columns}  >
+        </lightning-datatable>
+    </template>
+
+    <template if:true={Contacts}>
+        <h2>Related Contacts </h2>
+        <lightning-datatable key-field="Id" data={Contacts} columns={columns1} title="Related Contacts" >
+        </lightning-datatable>
+   
+    </template>
+</lightning-layout-item>
+</lightning-layout>
+</lightning-card>   
+</template>

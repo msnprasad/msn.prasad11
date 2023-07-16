@@ -1,0 +1,12 @@
+<template>
+		<lightning-card>
+		<lightning-input lable="message" name='inputname1' type="number" value={input1} onchange={handlechange}></lightning-input>
+   		<lightning-input lable="message" name='inputname2' type="number" value={input2} onchange={handlechange}></lightning-input>
+
+				<lightning-button lable="button" onclick={handleclick}></lightning-button>
+				<template if:true={handletrue}>
+				<p>
+						hello {sum}
+						</p></template>
+		</lightning-card>
+</template>

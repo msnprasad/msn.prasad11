@@ -1,0 +1,31 @@
+<template>
+    <lightning-card icon-name="custom:custom14" title="Filterd Accounts">
+        <lightning-layout vertical-align="center" >
+            <lightning-layout-item padding="around-small" >
+				 <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_5-of-12 slds-m-top_x-small">
+            <lightning-formatted-text value="Account Name" title="Account Name"></lightning-formatted-text>
+        </div>
+						 <div class="slds-col slds-size_7-of-12">
+                <lightning-input type="text" value={sword} onchange={Handlechange}>
+                    </lightning-input>
+								  </div>
+                 </div>
+								<br>
+                    <lightning-button onclick={Searchaccounts} variant="brand" label="Search" >
+                    </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout> 
+        <lightning-layout vertical-align="center" >
+            <lightning-layout-item padding="around-small" >
+
+    <template if:true={Contacts}>
+        <h2>Related Contacts </h2>
+        <lightning-datatable key-field="Id" data={Contacts} columns={columns1} title="Related Contacts" >
+        </lightning-datatable>
+   
+    </template>
+</lightning-layout-item>
+</lightning-layout>
+</lightning-card>   
+</template>

@@ -1,0 +1,30 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" >
+    <aura:attribute name="butonable" type="String" default="Search Button" />
+    <aura:attribute name="newLable" type="String" default="New Button" />
+    <aura:attribute name="isNewAvalible" type="Boolean" default="false" />
+    
+    <aura:attribute name="carTypes" type="String[]" default="Sports Car, Luxary Car, Van" />
+    <aura:handler name='init' value="{!this}" action="{!c.doinit}" />
+    <lightning:layout horizontalAlign ="center">
+        <lightning:layoutitem padding ="around-medium">
+        <lightning:select name = 'selectitem' aura:id="carTypelist" label='All Types' variant="label-hidden" value="Sports Car" onchange="{!c.newvalueselected}">
+            <option value="" text="All Types" />
+            <aura:iteration items="{!v.carTypes}" var="carType">
+                <option value="{!carType}" text="{!carType}" />
+            </aura:iteration>
+          </lightning:select>
+        </lightning:layoutitem>
+        
+          <lightning:layoutitem padding ="around-medium">
+            <lightning:button label="{!v.butonable}" onclick="{!c.onsearchclick}" Variant="brand"/>
+            
+          <aura:if isTrue= "{!v.isNewAvalible}">
+            <lightning:button label="{#v.newLable}" Variant="neutral"/>
+          <aura:set attribute="else">
+              New Button cannot be added Here
+              </aura:set>
+              
+          </aura:if>
+          </lightning:layoutitem>
+      </lightning:layout>
+</aura:component>
